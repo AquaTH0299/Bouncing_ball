@@ -27,6 +27,7 @@ public class Ball : MonoBehaviour
              if(Input.GetMouseButtonDown(0))
             {
                 StartPlaying();
+                AudioManager.instance.BouncingBallSound();
             }
         }
     }
@@ -46,6 +47,7 @@ public class Ball : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("Obstacle"))
             {
+                AudioManager.instance.ColliderObstacle();
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 foreach(var button in buttons)

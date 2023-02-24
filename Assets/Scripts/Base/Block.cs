@@ -7,16 +7,14 @@ public class Block : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
     private Rigidbody2D rb;
-    private GameObject gO;
     private ColorChanger colorChanger;
     private Color material;
     private void Start()
     {
-        gO = this.gameObject;
-        colorChanger = gO.GetComponent<ColorChanger>();
+        colorChanger = GetComponent<ColorChanger>();
         rb = GetComponent<Rigidbody2D>();
         material = GameManager.instance.GetRandomBlockMaterial();
-        gO.transform.GetComponent<SpriteRenderer>().color = material;
+        transform.GetComponent<SpriteRenderer>().color = material;
     }
 
     private void Update() 
@@ -28,7 +26,6 @@ public class Block : MonoBehaviour
 
         // xoay ngược chiều kim đồng hộ
         transform.Rotate(Vector3.back, -rotationSpeed * Time.deltaTime);
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

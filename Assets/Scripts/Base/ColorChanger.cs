@@ -30,9 +30,9 @@ public class ColorChanger : MonoBehaviour
         }
 
         // Change the color of the particle effect
-        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
-        ParticleSystemRenderer particleRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
-        particleRenderer.material.color = materials;
+        // ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        // ParticleSystemRenderer particleRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
+        // particleRenderer.material.color = materials;
 
         // change the color of the textmeshprogui
         GameManager.instance.textObject.color = materials;

@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioManager.instance.Stop();
         scoreText.text = "0";
         CheckObstacle.Instance.ResetScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

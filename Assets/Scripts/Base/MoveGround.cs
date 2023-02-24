@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveGround : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    public float speed => moveSpeed;
     private Vector3 startPosition;
     [SerializeField] private float maxDis;
     private bool isMoving;
@@ -34,6 +35,7 @@ public class MoveGround : MonoBehaviour
     
     private void Move()
     {
+        moveSpeed += Time.deltaTime * .02f;
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         if(transform.position.x < maxDis)
         {
